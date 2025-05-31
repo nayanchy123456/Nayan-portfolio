@@ -1,0 +1,191 @@
+:root {
+  --dark-bg: #0a192f;          /* Dark mode navbar background */
+  --light-bg: #ffffff;         /* Light mode navbar background */
+  --primary-accent: #00bcd4;
+  --secondary-accent: #00e5ff;
+  --dark-text: #0a192f;
+  --light-text: #ffffff;
+  --transition-speed: 0.3s;
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(135deg, #001f3f 0%, #0a192f 100%);
+  box-shadow: 0 4px 10px var(--shadow-dark);
+  z-index: 1100;
+  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+body.light header {
+  background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+  box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  font-family: var(--font-family);
+  color: var(--light-text);
+  transition: color var(--transition-speed) ease;
+}
+
+body.light .navbar {
+  color: var(--dark-text);
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  display: flex;
+  gap: 0.2rem;
+  letter-spacing: 0.06em;
+  user-select: none;
+  cursor: default;
+}
+
+.logo .white {
+  color: var(--light-text);
+  transition: color var(--transition-speed) ease;
+}
+
+body.light .logo .white {
+  color: var(--dark-text);
+}
+
+.logo .red {
+  color: #ff4757;
+  transition: color var(--transition-speed) ease;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+  transition: color var(--transition-speed) ease;
+  position: relative;
+  /* for underline effect */
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--primary-accent);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: var(--primary-accent);
+  outline: none;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a:focus::after {
+  width: 100%;
+}
+
+/* Mode Toggle Button */
+.mode-toggle-btn {
+  background: none;
+  border: 2px solid var(--primary-accent);
+  color: var(--primary-accent);
+  font-size: 1.1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  box-shadow: 0 0 8px var(--primary-accent);
+}
+
+.mode-toggle-btn:hover,
+.mode-toggle-btn:focus {
+  background-color: var(--primary-accent);
+  color: var(--light-text);
+  outline: none;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--secondary-accent);
+}
+
+/* Responsive hamburger menu (optional base for mobile) */
+.hamburger {
+  display: none; /* show on mobile with JS toggle */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1200;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-accent);
+  border-radius: 3px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg);
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; 
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
