@@ -25,13 +25,13 @@ const About = () => {
         <div className="about-content">
           <h2>About Me</h2>
           <p>
-            I'm a passionate frontend developer with a love for clean, responsive UI.
+            I'm a passionate fullstack developer with a love for clean, responsive UI.
             I enjoy building web apps using modern tech like React JS and Spring Boot.
           </p>
 
           <h3>Personal Interests</h3>
           <ul>
-            <li>📚 Avid reader and lifelong learner</li>
+            <li>📚 Books reader and lifelong learner</li>
             <li>🎵 Music lover</li>
             <li>🌱 Enthusiast of sustainable tech and green solutions</li>
             <li>🚀 Always eager to explore new technologies</li>

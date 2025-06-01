@@ -1,17 +1,20 @@
 /* Project.css */
 
 .projects-section {
-  background-color: #0a192f;
-  color: #fff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+
   padding: 4rem 2rem;
   min-height: 100vh;
 }
 
 .projects-title {
-  font-size: 2rem; /* smaller than before */
+  font-size: 2rem;
+  /* smaller than before */
   text-align: center;
   margin-bottom: 3rem;
-  color: #ff4081; /* new accent color */
+  color: #ff4081;
+  /* new accent color */
   font-weight: bold;
   position: relative;
   display: inline-block;
@@ -25,13 +28,16 @@
   transform: translateX(-50%);
   bottom: -4px;
   width: 0;
-  height: 1.5px; /* thinner underline */
-  background-color: #ff4081; /* same as text color */
+  height: 1.5px;
+  /* thinner underline */
+  background-color: #ff4081;
+  /* same as text color */
   transition: width 0.3s ease;
 }
 
 .projects-title:hover::after {
-  width: 40%; /* shorter underline */
+  width: 40%;
+  /* shorter underline */
 }
 
 .projects-title-wrapper {

@@ -1,8 +1,9 @@
 .skills-section {
   height: 100vh;
   padding: 1rem;
-  background: linear-gradient(135deg, #0f1724 0%, #18232e 100%);
-  color: #d0e8f2;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +15,8 @@
   color: #ff4081;
   margin-bottom: 2.5rem;
   position: relative;
-  cursor: pointer; /* Optional: makes it feel interactive */
+  cursor: pointer;
+  /* Optional: makes it feel interactive */
 }
 
 .section-title::after {

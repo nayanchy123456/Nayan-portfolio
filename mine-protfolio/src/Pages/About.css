@@ -4,8 +4,9 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #1f2833 0%, #0b0c10 100%);
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+
   text-align: left;
   position: relative;
   overflow: hidden;
@@ -80,7 +81,8 @@
   color: #d4ad00;
   transition: color 0.3s ease;
 }
-.about h3{
+
+.about h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #d4ad00;
@@ -90,6 +92,7 @@
 .about h2:hover {
   color: #00e0ff;
 }
+
 .about h3:hover {
   color: #00e0ff;
 }
@@ -143,7 +146,8 @@
     text-align: center;
   }
 
-  .about h2, .about h3 {
+  .about h2,
+  .about h3 {
     display: block;
   }
 

@@ -1,6 +1,6 @@
 :root {
-  --dark-bg: #0a192f;          /* Dark mode navbar background */
-  --light-bg: #ffffff;         /* Light mode navbar background */
+  --dark-bg: #0a192f;
+  --light-bg: #ffffff;
   --primary-accent: #00bcd4;
   --secondary-accent: #00e5ff;
   --dark-text: #0a192f;
@@ -9,26 +9,36 @@
   --shadow-dark: rgba(0, 0, 0, 0.6);
   --shadow-light: rgba(0, 0, 0, 0.1);
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --nav-height: 60px;
 }
 
+/* Header/Navbar Base Styles */
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: linear-gradient(135deg, #001f3f 0%, #0a192f 100%);
-  box-shadow: 0 4px 10px var(--shadow-dark);
+  height: var(--nav-height);
   z-index: 1100;
-  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  transition: all var(--transition-speed) ease;
   backdrop-filter: saturate(180%) blur(20px);
 }
 
-body.light header {
-  background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
-  box-shadow: 0 4px 10px var(--shadow-light);
+/* Dark Mode Header */
+body.dark-mode header {
+  background: linear-gradient(135deg, #001f3f 0%, var(--dark-bg) 100%);
+  box-shadow: 0 4px 10px var(--shadow-dark);
+  color: var(--light-text);
 }
 
+/* Light Mode Header */
+body.light-mode header {
+  background: linear-gradient(135deg, #f0f4f8 0%, var(--light-bg) 100%);
+  box-shadow: 0 4px 10px var(--shadow-light);
+  color: var(--dark-text);
+}
+
+/* Navbar Container */
 .navbar {
   max-width: 1200px;
   margin: 0 auto;
@@ -38,11 +48,15 @@ body.light header {
   align-items: center;
   padding: 0 2rem;
   font-family: var(--font-family);
-  color: var(--light-text);
   transition: color var(--transition-speed) ease;
 }
 
-body.light .navbar {
+/* Navbar text colors based on mode */
+body.dark-mode .navbar {
+  color: var(--light-text);
+}
+
+body.light-mode .navbar {
   color: var(--dark-text);
 }
 
@@ -55,6 +69,11 @@ body.light .navbar {
   letter-spacing: 0.06em;
   user-select: none;
   cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .logo .white {
@@ -62,7 +81,7 @@ body.light .navbar {
   transition: color var(--transition-speed) ease;
 }
 
-body.light .logo .white {
+body.light-mode .logo .white {
   color: var(--dark-text);
 }
 
@@ -77,9 +96,11 @@ body.light .logo .white {
   display: flex;
   gap: 2rem;
   align-items: center;
-  position: relative;
-  user-select: none;
+  margin: 0;
+  padding: 0;
 }
+
+/* Links base color inherited from navbar */
 
 .nav-links li {
   position: relative;
@@ -91,9 +112,8 @@ body.light .logo .white {
   font-weight: 500;
   font-size: 1rem;
   padding: 0.4rem 0;
-  transition: color var(--transition-speed) ease;
+  transition: all var(--transition-speed) ease;
   position: relative;
-  /* for underline effect */
 }
 
 .nav-links li a::after {
@@ -104,18 +124,19 @@ body.light .logo .white {
   bottom: 0;
   left: 0;
   background: var(--primary-accent);
-  transition: width 0.3s ease;
+  transition: width var(--transition-speed) ease;
   border-radius: 2px;
 }
 
 .nav-links li a:hover,
-.nav-links li a:focus {
+.nav-links li a:focus,
+.nav-links li a.active {
   color: var(--primary-accent);
-  outline: none;
 }
 
 .nav-links li a:hover::after,
-.nav-links li a:focus::after {
+.nav-links li a:focus::after,
+.nav-links li a.active::after {
   width: 100%;
 }
 
@@ -129,9 +150,11 @@ body.light .logo .white {
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: all var(--transition-speed) ease;
   user-select: none;
-  box-shadow: 0 0 8px var(--primary-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .mode-toggle-btn:hover,
@@ -143,49 +166,82 @@ body.light .logo .white {
   box-shadow: 0 0 15px var(--secondary-accent);
 }
 
-/* Responsive hamburger menu (optional base for mobile) */
-.hamburger {
-  display: none; /* show on mobile with JS toggle */
-  flex-direction: column;
-  justify-content: space-around;
-  width: 25px;
-  height: 22px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1200;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background: var(--primary-accent);
-  border-radius: 3px;
-  transition: all 0.3s linear;
-  position: relative;
-  transform-origin: 1px;
-}
-
-
-.hamburger.active div:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.hamburger.active div:nth-child(2) {
-  opacity: 0;
-  transform: translateX(20px);
-}
-
-.hamburger.active div:nth-child(3) {
-  transform: rotate(-45deg);
-}
+/* Responsive Styles */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
   .nav-links {
-    display: none; 
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    transform: translateY(-150%);
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 20px var(--shadow-dark);
+  }
+
+  body.light-mode .nav-links {
+    background: var(--light-bg);
+    box-shadow: 0 10px 20px var(--shadow-light);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
   }
 
   .hamburger {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1200;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-accent);
+    border-radius: 3px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg);
   }
 }
+
+/* Animation for navbar on scroll */
+.header-scrolled {
+  height: 50px;
+  background: rgba(10, 25, 47, 0.9) !important;
+  box-shadow: 0 2px 5px var(--shadow-dark);
+}
+
+body.light-mode .header-scrolled {
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 5px var(--shadow-light);
+}
+  

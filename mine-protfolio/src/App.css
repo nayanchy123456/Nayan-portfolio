@@ -1,13 +1,20 @@
-body.light-mode {
-  background-color: #ffffff;
-  color: #111111;
+/* App.css - for main app layout only */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-body.dark-mode {
-  background-color: #0f172a;
-  color: #f8fafc;
+.main-content {
+  flex: 1;
+  padding-top: 80px; /* Adjust based on your navbar height */
 }
 
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Theme-aware shadows */
+.card {
+  box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+[data-theme="dark"] .card {
+  box-shadow: 0 2px 15px var(--shadow-dark);
 }

@@ -23,21 +23,21 @@ const Project = () => {
       description: "A classic two-player Tic Tac Toe game built using JavaScript, HTML, and CSS. Players take turns marking X or O on a 3×3 grid until one wins or the game ends in a draw.",
       tech: ["JavaScript"],
       github: "https://github.com/nayanchy123456/Tic-Tac-Toe",
-      demo: "https://yourdemo.com/tic-tac-toe"
+      demo: "https://candid-sable-45b67d.netlify.app/"
     },
     {
       title: "Password Generator App",
       description: "A web-based tool built with JavaScript that generates strong, random passwords based on user-selected criteria such as length, uppercase, lowercase, numbers, and special characters.",
       tech: ["JavaScript"],
       github: "https://github.com/nayanchy123456/Password-Generator-App",
-      demo: "https://yourdemo.com/password-generator"
+      demo: "https://precious-tanuki-9e1937.netlify.app/"
     },
     {
       title: "Weather Application",
       description: "A React-based web app that fetches real-time weather data using a public API. Users can search for any city to view current temperature, weather conditions, humidity, wind speed, and more in a clean, responsive UI.",
       tech: ["React"],
       github: "https://github.com/nayanchy123456/weatherApplication",
-      demo: "weather-application-upba.vercel.app"
+      demo: "https://weather-application-upba.vercel.app/"
     },
     {
       title: "Note Taker",
@@ -45,9 +45,7 @@ const Project = () => {
       tech: ["Java", "Servlet", "JSP", "MySQL"],
       github: "https://github.com/nayanchy123456/TODO-Project",
       demo: "https://yourdemo.com/note-taker"
-    }
-
-    // Add more projects here
+    },
   ];
 
   return (
@@ -68,7 +66,7 @@ const Project = () => {
             <div className="project-links">
               <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
               {project.demo && (
-                <a href={project.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo</a>
               )}
             </div>
           </div>

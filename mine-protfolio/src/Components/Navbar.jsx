@@ -2,19 +2,29 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  // Initialize state with localStorage value or system preference
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode !== null) {
+      return JSON.parse(savedMode);
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   useEffect(() => {
-    document.body.classList.add(darkMode ? "dark-mode" : "light-mode");
-  }, []);
+    // Apply the theme class to body
+    document.body.classList.toggle("dark-mode", darkMode);
+    document.body.classList.toggle("light-mode", !darkMode);
+    
+    // Save preference to localStorage
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    
+    // Update all components by setting data-theme attribute
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode((prev) => {
-      const newMode = !prev;
-      document.body.classList.toggle("dark-mode", newMode);
-      document.body.classList.toggle("light-mode", !newMode);
-      return newMode;
-    });
+    setDarkMode(prev => !prev);
   };
 
   return (
@@ -37,9 +47,13 @@ const Navbar = () => {
         <button
           onClick={toggleDarkMode}
           className="mode-toggle-btn"
-          aria-label="Toggle dark/light mode"
+          aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
         >
-          {darkMode ? "☀️" : "🌙"}
+          {darkMode ? (
+            <span role="img" aria-label="Sun">☀️</span>
+          ) : (
+            <span role="img" aria-label="Moon">🌙</span>
+          )}
         </button>
       </nav>
     </header>

@@ -44,9 +44,8 @@ const Home = ({ darkMode }) => {
           <h2 className="title">
             <SimpleTypewriter
               words={[
-                "Frontend Developer",
-                "React Specialist",
-                "UI/UX Designer",
+                "Fullstack Developer",
+                "Logical Thinker",
                 "Clean Code Advocate",
               ]}
               loop={true}

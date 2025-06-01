@@ -6,7 +6,7 @@
 }
 
 .social-links a {
-  color: white;
+  color: rgb(172, 103, 103);
   font-size: 1.8rem;
   transition: color 0.3s, transform 0.3s;
 }

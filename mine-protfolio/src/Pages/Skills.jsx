@@ -1,10 +1,12 @@
 import React from "react";
 import "./Skills.css";
 import { FaReact, FaJava, FaHtml5, FaCss3Alt, FaJs, FaDatabase } from "react-icons/fa";
+import { SiSpring } from "react-icons/si";
 
 const skills = [
   { icon: <FaReact />, name: "React JS"},
   { icon: <FaJava />, name: "Java"},
+  { icon: <SiSpring />, name: "Spring Boot"},
   { icon: <FaHtml5 />, name: "HTML"},
   { icon: <FaCss3Alt />, name: "CSS"},
   { icon: <FaJs />, name: "JavaScript"},
