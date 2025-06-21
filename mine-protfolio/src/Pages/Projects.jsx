@@ -9,14 +9,12 @@ const Project = () => {
       description: "A full-stack app to create, update, and track tasks with automatic overdue detection.",
       tech: ["React", "Java","Spring Boot", "MySQL"],
       github: "https://github.com/nayanchy123456/Task-Manager",
-      demo: "https://yourdemo.com/task-manager",
     },
     {
       title: "BMI Calculator",
       description: "A simple web app that calculates Body Mass Index (BMI) based on user input for height and weight, and categorizes the result (e.g., underweight, normal, overweight, or obese).",
       tech: ["JavaScript"],
       github: "https://github.com/nayanchy123456/BMI-Calculator",
-      demo: "https://yourdemo.com/bmi-calculator"
     },
     {
       title: "Tic Tac Toe",
@@ -44,7 +42,6 @@ const Project = () => {
       description: "A full-stack web application using Java, Servlets, JSP, and MySQL that allows users to create, edit, and delete personal notes. Each note is stored securely in a database and can be managed through a simple, user-friendly interface.",
       tech: ["Java", "Servlet", "JSP", "MySQL"],
       github: "https://github.com/nayanchy123456/TODO-Project",
-      demo: "https://yourdemo.com/note-taker"
     },
   ];
 
