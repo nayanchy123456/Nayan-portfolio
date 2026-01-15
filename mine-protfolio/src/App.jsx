@@ -24,7 +24,6 @@ function App() {
 
   return (
       <div className={`app ${darkMode ? "dark" : "light"}`}>
-        <UnderwaterBubbleTrail />
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <main className="main-content">
           <section id="home">
