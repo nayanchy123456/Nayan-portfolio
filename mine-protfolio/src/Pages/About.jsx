@@ -22,9 +22,9 @@ const About = () => {
   const handleCertificateView = (certificateType) => {
     // Add your certificate image paths or URLs here
     if (certificateType === "aws") {
-      window.open("/src/assets/aws_cloud_certificate.pdf", "_blank");
+      window.open("aws_cloud_certificate.pdf", "_blank");
     } else if (certificateType === "nea") {
-      window.open("/src/assets/nea_certificate.pdf", "_blank");
+      window.open("nea_certificate.pdf", "_blank");
     }
   };
 
