@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import { Typewriter as SimpleTypewriter } from "react-simple-typewriter";
 import Typewriter from 'typewriter-effect';
-import ProfilePic from "../assets/profile.JPEG";
+import ProfilePic from "../assets/personalPicture.jpeg";
 import SocialLinks from "../Components/SocialLinks";
 
 const Home = ({ darkMode }) => {
@@ -45,8 +45,7 @@ const Home = ({ darkMode }) => {
             <SimpleTypewriter
               words={[
                 "Fullstack Developer",
-                "Logical Thinker",
-                "Clean Code Advocate",
+                "Java Enthusiast",
               ]}
               loop={true}
               cursor
@@ -58,8 +57,7 @@ const Home = ({ darkMode }) => {
           </h2>
 
           <p className="intro-text">
-            I build exceptional digital experiences with modern web technologies.
-            Currently focused on creating accessible, human-centered interfaces.
+            I am a Java enthusiast and full-stack developer who believes technology's highest purpose is to solve tangible human problems.
           </p>
 
           <div className="button-group">

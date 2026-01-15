@@ -9,14 +9,12 @@ const Project = () => {
       description: "A full-stack app to create, update, and track tasks with automatic overdue detection.",
       tech: ["React", "Java","Spring Boot", "MySQL"],
       github: "https://github.com/nayanchy123456/Task-Manager",
-      demo: "https://yourdemo.com/task-manager",
     },
     {
       title: "BMI Calculator",
       description: "A simple web app that calculates Body Mass Index (BMI) based on user input for height and weight, and categorizes the result (e.g., underweight, normal, overweight, or obese).",
       tech: ["JavaScript"],
       github: "https://github.com/nayanchy123456/BMI-Calculator",
-      demo: "https://yourdemo.com/bmi-calculator"
     },
     {
       title: "Tic Tac Toe",
@@ -44,7 +42,19 @@ const Project = () => {
       description: "A full-stack web application using Java, Servlets, JSP, and MySQL that allows users to create, edit, and delete personal notes. Each note is stored securely in a database and can be managed through a simple, user-friendly interface.",
       tech: ["Java", "Servlet", "JSP", "MySQL"],
       github: "https://github.com/nayanchy123456/TODO-Project",
-      demo: "https://yourdemo.com/note-taker"
+    },
+
+    {
+      title: "Online Voting System",
+      description: "This is Group project. Online Voting System is a web application which was designed using tech stacks like Html,css,js in frontend and Python(Django) in backend with db.sqlite3 as database. This project was design to conduct the online voting to select the Class Representatives of the college or class.In this project i have contributed in frontend part only(HTML,CSS,JS) ",
+      tech: ["Python","Django", "HTML", "CSS", "JS","db.sqlite3"],
+      github: "https://github.com/anishkarn33/Online_voting_sysytem",
+    },
+    {
+      title: "E-Learning",
+      description: "This is group project. E-learning is a web application which was designed using tech stacks like React Js in frontend and Python(Django) in backend with postgresql as database. In this project i have contributed to the frontend part only.",
+      tech: ["React", "Python", "Django", "postgresql"],
+
     },
   ];
 
