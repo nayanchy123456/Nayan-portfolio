@@ -7,7 +7,7 @@ const Project = () => {
     {
       title: "Task Manager App",
       description: "A full-stack app to create, update, and track tasks with automatic overdue detection.",
-      tech: ["React", "Java","Spring Boot", "MySQL"],
+      tech: ["React", "Java", "Spring Boot", "MySQL"],
       github: "https://github.com/nayanchy123456/Task-Manager",
     },
     {
@@ -46,16 +46,27 @@ const Project = () => {
 
     {
       title: "Online Voting System",
-      description: "This is Group project. Online Voting System is a web application which was designed using tech stacks like Html,css,js in frontend and Python(Django) in backend with db.sqlite3 as database. This project was design to conduct the online voting to select the Class Representatives of the college or class.In this project i have contributed in frontend part only(HTML,CSS,JS) ",
-      tech: ["Python","Django", "HTML", "CSS", "JS","db.sqlite3"],
+      description: "This is Group project. Online Voting System is a web application for conducting online voting to select class/college representatives. Developed responsive frontend using HTML, CSS, and JavaScript, and integrated with Django backend APIs for authentication, voting workflows, and result display. ",
+      tech: ["Python", "Django", "HTML", "CSS", "JavaScript", "db.sqlite3"],
       github: "https://github.com/anishkarn33/Online_voting_sysytem",
     },
     {
       title: "E-Learning",
-      description: "This is group project. E-learning is a web application which was designed using tech stacks like React Js in frontend and Python(Django) in backend with postgresql as database. In this project i have contributed to the frontend part only.",
+      description: "This is group project. E-learning is a web application which provides facilities like accessing notes, chatting with the tutors, watching the recorded lectures. In this project i have developed responsicve frontend using react, and integrated with Djando APIs.",
       tech: ["React", "Python", "Django", "postgresql"],
-
+      github: "",
     },
+
+    {
+      title: "Community Ev Station Platform",
+      description: "Implemented JWT authentication, role-based dashboards, charger search, Google Maps integration, and slot booking. This Project currently in progress with ongoing feature enhancements.",
+      tech: ["React", "Java", "Spring Boot", "MySQL"],
+      github: [
+        { label: "Frontend", link: "https://github.com/nayanchy123456/ev-station-frontend-new" },
+        { label: "Backend", link: "https://github.com/nayanchy123456/ev-station-backend" },
+      ],
+    }
+
   ];
 
   return (
@@ -74,11 +85,20 @@ const Project = () => {
               ))}
             </div>
             <div className="project-links">
-              <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              {Array.isArray(project.github) ? (
+                project.github.map((repo, idx) => (
+                  <a key={idx} href={repo.link} target="_blank" rel="noopener noreferrer">
+                    {repo.label}
+                  </a>
+                ))
+              ) : (
+                <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              )}
               {project.demo && (
                 <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo</a>
               )}
             </div>
+
           </div>
         ))}
       </div>
