@@ -59,7 +59,7 @@ const Contact = () => {
       <div className="contact-container">
         <h2 className="contact-title">Get In Touch</h2>
         <p className="contact-subtitle">
-          Want to collaborate or just want to say hello? Feel free to reach out!
+          Looking for the opportunities!.Feel free to reach out!
         </p>
 
         <div className="contact-content">
