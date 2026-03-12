@@ -1,6 +1,6 @@
 # Nayan Chaudhary Portfolio
 
-Welcome to my personal portfolio! This is a **React.js** based portfolio website showcasing my projects, skills, and contact information.
+Welcome to my personal portfolio! This is a **React.js** based portfolio website showcasing my projects, skills,about me and  contact information.
 
 ---
 
