@@ -57,15 +57,21 @@ const Project = () => {
       github: "",
     },
 
-    {
-      title: "Community Ev Station Platform",
-      description: "Implemented JWT authentication, role-based dashboards, charger search, Google Maps integration, and slot booking. This Project currently in progress with ongoing feature enhancements.",
-      tech: ["React", "Java", "Spring Boot", "MySQL"],
-      github: [
-        { label: "Frontend", link: "https://github.com/nayanchy123456/ev-station-frontend-new" },
-        { label: "Backend", link: "https://github.com/nayanchy123456/ev-station-backend" },
-      ],
-    }
+{
+  title: "Community EV Charging Platform",
+  description: [
+    "Built Airbnb-inspired EV charging platform with JWT authentication and role-based access control.",
+    "Developed RESTful APIs using Spring Boot for charger management, booking, and payments.",
+    "Implemented real-time slot booking with MySQL-based data handling.",
+    "Integrated mock payment system to simulate secure transaction workflows.",
+    "Enabled location-based charger discovery using Map integration."
+  ],
+  tech: ["React", "Java", "Spring Boot", "MySQL"],
+  github: [
+    { label: "Frontend", link: "https://github.com/nayanchy123456/ev-station-frontend-new" },
+    { label: "Backend", link: "https://github.com/nayanchy123456/ev-station-backend" },
+  ],
+}
 
   ];
 
