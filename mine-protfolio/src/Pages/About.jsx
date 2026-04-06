@@ -12,7 +12,7 @@ const About = () => {
 
   const handleResumeDownload = () => {
     // Add your resume file path here
-    const resumeUrl = "/Nayan_cv.pdf";
+    const resumeUrl = "/Nayan_resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Nayan_cv.pdf";
