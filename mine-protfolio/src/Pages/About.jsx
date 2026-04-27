@@ -12,7 +12,7 @@ const About = () => {
 
   const handleResumeDownload = () => {
     // Opens resume in a new tab instead of downloading
-    const resumeUrl = "/Nayan_Resume.pdf";
+    const resumeUrl = "/";
     window.open(resumeUrl, "_blank");
   };
 
