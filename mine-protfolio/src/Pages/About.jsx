@@ -11,12 +11,9 @@ const About = () => {
   const [activeTab, setActiveTab] = useState("bio");
 
   const handleResumeDownload = () => {
-    // Add your resume file path here
+    // Opens resume in a new tab instead of downloading
     const resumeUrl = "/Nayan_Resume.pdf";
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Nayan_Resume.pdf";
-    link.click();
+    window.open(resumeUrl, "_blank");
   };
 
   const handleCertificateView = (certificateType) => {
@@ -159,7 +156,7 @@ const About = () => {
           </div>
           <SocialLinks />
           <button className="resume-btn" onClick={handleResumeDownload}>
-            <FaDownload /> Download Resume
+            <FaDownload /> View Resume
           </button>
         </div>
 
