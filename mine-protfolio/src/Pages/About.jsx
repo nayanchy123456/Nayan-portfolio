@@ -15,7 +15,7 @@ const About = () => {
     const resumeUrl = "/Nayan_Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "Nayan_cv.pdf";
+    link.download = "Nayan_Resume.pdf";
     link.click();
   };
 
