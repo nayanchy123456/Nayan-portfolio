@@ -43,7 +43,6 @@ const Project = () => {
       tech: ["Java", "Servlet", "JSP", "MySQL"],
       github: "https://github.com/nayanchy123456/TODO-Project",
     },
-
     {
       title: "Online Voting System",
       description: "This is Group project. Online Voting System is a web application for conducting online voting to select class/college representatives. Developed responsive frontend using HTML, CSS, and JavaScript, and integrated with Django backend APIs for authentication, voting workflows, and result display. ",
@@ -56,23 +55,34 @@ const Project = () => {
       tech: ["React", "Python", "Django", "postgresql"],
       github: "",
     },
-
-{
-  title: "Community EV Charging Platform",
-  description: [
-    "Built Airbnb-inspired EV charging platform with JWT authentication and role-based access control.",
-    "Developed RESTful APIs using Spring Boot for charger management, booking, and payments.",
-    "Implemented real-time slot booking with MySQL-based data handling.",
-    "Integrated mock payment system to simulate secure transaction workflows.",
-    "Enabled location-based charger discovery using Map integration."
-  ],
-  tech: ["React", "Java", "Spring Boot", "MySQL"],
-  github: [
-    { label: "Frontend", link: "https://github.com/nayanchy123456/ev-station-frontend-new" },
-    { label: "Backend", link: "https://github.com/nayanchy123456/ev-station-backend" },
-  ],
-}
-
+    {
+      title: "Community EV Charging Platform",
+      description: [
+        "Built Airbnb-inspired EV charging platform with JWT authentication and role-based access control.",
+        "Developed RESTful APIs using Spring Boot for charger management, booking, and payments.",
+        "Implemented real-time slot booking with MySQL-based data handling.",
+        "Integrated mock payment system to simulate secure transaction workflows.",
+        "Enabled location-based charger discovery using Map integration."
+      ],
+      tech: ["React", "Java", "Spring Boot", "MySQL"],
+      github: [
+        { label: "Frontend", link: "https://github.com/nayanchy123456/ev-station-frontend-new" },
+        { label: "Backend", link: "https://github.com/nayanchy123456/ev-station-backend" },
+      ],
+    },
+    {
+      title: "Fintech Wallet & Payment Processing System",
+      description: [
+        "Built a production-grade fintech wallet backend with JWT authentication, token blacklisting for secure logout, and role-based access control.",
+        "Developed RESTful APIs using Spring Boot for wallet operations including deposit, withdrawal, and peer-to-peer fund transfers with per-transaction limits.",
+        "Implemented double-entry ledger accounting to maintain accurate debit/credit records and full audit trails for every transaction.",
+        "Integrated Apache Kafka for async event streaming — transaction events trigger real-time notifications with DLQ (Dead Letter Queue) persistence for failure recovery.",
+        "Used Redis for token blacklisting and caching, ensuring fast, stateless session invalidation.",
+        "Containerized the full stack using Docker Compose (MySQL, Kafka, Redis) and documented APIs with Swagger/OpenAPI.",
+      ],
+      tech: ["Java", "Spring Boot", "MySQL", "Apache Kafka", "Redis", "Docker", "JWT", "Swagger"],
+      github: "https://github.com/nayanchy123456/FINTECH-WALLET-SYSTEM",
+    },
   ];
 
   return (
@@ -84,7 +94,15 @@ const Project = () => {
         {projects.map((project, index) => (
           <div className="project-card" key={index}>
             <h3>{project.title}</h3>
-            <p>{project.description}</p>
+            {Array.isArray(project.description) ? (
+              <ul className="project-description-list">
+                {project.description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{project.description}</p>
+            )}
             <div className="tech-stack">
               {project.tech.map((tech, idx) => (
                 <span key={idx} className="tech-item">{tech}</span>
@@ -98,13 +116,14 @@ const Project = () => {
                   </a>
                 ))
               ) : (
-                <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                project.github && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                )
               )}
               {project.demo && (
                 <a href={project.demo} target="_blank" rel="noopener noreferrer">Demo</a>
               )}
             </div>
-
           </div>
         ))}
       </div>
